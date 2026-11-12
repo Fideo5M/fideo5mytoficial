@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fideo5M - Página de Inicio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0d0e12',
+                        cardBg: '#16181f',
+                        brandOrange: '#ff6b00',
+                        brandYellow: '#ffa800',
+                        accentTeal: '#00e5b7',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0e12;
+            color: #ffffff;
+        }
+        .glow-teal {
+            box-shadow: 0 0 20px rgba(0, 229, 183, 0.4);
+        }
+        .glow-teal:hover {
+            box-shadow: 0 0 30px rgba(0, 229, 183, 0.7);
+        }
+        .glow-orange {
+            box-shadow: 0 0 25px rgba(255, 107, 0, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ff6b00, #ffa800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .social-btn {
+            background-color: #ff6b00;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .social-btn.yt:hover {
+            background-color: #FF0000 !important;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+        }
+        .social-btn.ig:hover {
+            background-color: #E1306C !important;
+            box-shadow: 0 0 20px rgba(225, 48, 108, 0.6);
+        }
+        .social-btn.tw:hover {
+            background-color: #9146FF !important;
+            box-shadow: 0 0 20px rgba(145, 70, 255, 0.6);
+        }
+        .social-btn.tk:hover {
+            background-color: #00f2fe !important;
+            color: #000000 !important;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-white antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-cardBg border border-[#00e5b7] text-white px-6 py-4 rounded-xl shadow-2xl flex items-center space-x-3">
+        <i class="fa-solid fa-circle-check text-[#00e5b7] text-xl"></i>
+        <span id="toast-message" class="text-sm font-semibold">¡Mensaje enviado con éxito!</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-darkBg/90 backdrop-blur-md border-b border-orange-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Avatar -->
+            <a href="#inicio" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-orange-500 group-hover:scale-105 transition-transform shadow-lg bg-cardBg flex items-center justify-center shrink-0">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7ZYjxX3fkxEhOyexXxp1Lv0v7pUYGGjL_rn2nzqQQ-RVDDeVybJ9aqmjIQ3FE1cVVF1vdlapL9QLe0yxWmm2WWZiiDLxR18gC-oteRCTTIencq47Y9aUxygPsohAdUnpyKX04X98ODYivGDbvpgy3YbQMNWCX87ri3kHJPaiIvsJKAuC1jWWTqfKsSuU/s320-rw/Fideos.jpg" alt="Fideo5M Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-tight text-white">FIDEO5M</span>
+                    <span class="text-[10px] text-orange-400 font-bold tracking-widest uppercase">CONTENT CREATOR</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm text-gray-300">
+                <a href="#inicio" class="hover:text-[#ffa800] transition-colors">Inicio</a>
+                <a href="#sobre-mi" class="hover:text-[#ffa800] transition-colors">Sobre Mí</a>
+                <a href="#meme" class="hover:text-[#ffa800] transition-colors">Meme</a>
+                <a href="#redes" class="hover:text-[#ffa800] transition-colors">Redes</a>
+                <a href="#videos" class="hover:text-[#ffa800] transition-colors">Vídeos</a>
+                <a href="#contacto" class="hover:text-[#ffa800] transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Subscribe CTA -->
+            <a href="https://www.youtube.com/@Fideo5M?sub_confirmation=1" target="_blank" class="px-6 py-2.5 rounded-xl bg-[#00e5b7] text-black font-extrabold text-sm glow-teal transition-all transform hover:-translate-y-0.5 flex items-center space-x-2">
+                <i class="fa-brands fa-youtube text-lg"></i>
+                <span>Suscribirse</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- INICIO (Hero) -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden text-center">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff6b00]/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <!-- Top Official Banner Image -->
+            <div class="mb-10 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border-2 border-orange-500/50 glow-orange bg-cardBg shadow-2xl">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEionSyCHB6oDXAfXQeBxyETOdZUPI9XtHYIAR2uyRUBkWnXocEQmDsujn_USHQeVf1S4PcSeZ2yvN-IkQLwcKCko89lw8MMrZG_y0AvKUoN8idLXB7aDlFXMTaH0FsPwPWDjjlA-jFhmd5JrluWouZfatAXCO-Nevi5CaVoJAHv02_f9ReRGEWpN4M36kY/s320-rw/Banner.jpg" alt="Fideo5M Banner" class="w-full h-auto max-h-[320px] object-cover" onerror="this.src='https://placehold.co/1200x400/16181f/ff6b00?text=FIDEO5M+BANNER'">
+            </div>
+
+            <!-- New Content Badge -->
+            <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-[#ff6b00]/10 border border-[#ff6b00]/30 text-[#ffa800] text-xs font-bold tracking-wide uppercase mb-8">
+                <span class="w-2 h-2 rounded-full bg-[#00e5b7] shadow-[0_0_8px_#00e5b7]"></span>
+                <span>NUEVO CONTENIDO DISPONIBLE EN YOUTUBE</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-none text-white mb-6">
+                EL UNIVERSO GAMING DE <br>
+                <span class="gradient-text">FIDEO5M</span>
+            </h1>
+
+            <p class="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-medium">
+                Retos épicos, partidas increíbles, shorts virales y mucha diversión. ¡Únete a la comunidad!
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="https://www.youtube.com/@Fideo5M" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#00e5b7] text-black font-black text-base glow-teal transition-all transform hover:-translate-y-1 flex items-center justify-center space-x-3">
+                    <i class="fa-brands fa-youtube text-2xl"></i>
+                    <span>Ver Canal de YouTube</span>
+                </a>
+                <a href="#videos" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-cardBg hover:bg-[#ff6b00]/10 text-white font-bold text-base border border-white/10 hover:border-[#ff6b00]/50 transition-all flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-play text-[#ff6b00]"></i>
+                    <span>Explorar Vídeos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ & GALERÍA -->
+    <section id="sobre-mi" class="py-20 bg-cardBg/40 border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-orange-500 mb-6 shadow-xl bg-cardBg flex items-center justify-center">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7ZYjxX3fkxEhOyexXxp1Lv0v7pUYGGjL_rn2nzqQQ-RVDDeVybJ9aqmjIQ3FE1cVVF1vdlapL9QLe0yxWmm2WWZiiDLxR18gC-oteRCTTIencq47Y9aUxygPsohAdUnpyKX04X98ODYivGDbvpgy3YbQMNWCX87ri3kHJPaiIvsJKAuC1jWWTqfKsSuU/s320-rw/Fideos.jpg" alt="Fideo5M Logo" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-3xl font-black text-white mb-6">SOBRE MÍ</h2>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto whitespace-pre-line mb-12">
+                Hola!!! 😀 Soy Fideo, soy de Logroño, España 🇪🇸
+                Subo Fortnite, Minecraft y mucho más.
+                Llevo creando contenido desde 2020.
+                Últimamente estoy a tope con el canal.
+                Si, te gustan mis videos y me quieres ayudar suscribete para llegar a más gente.
+                Me gustan los videojuegos como Minecraft, Fortnite o OnceHuman, el fútbol y soy socio de la ❤️​🤍​❤️ ​UD Logroñés ❤️​🤍​❤️​ desde la temporada 23/24, me encantan los juegos de mesa y salir y jugar con amigos.
+
+                También me encantan las pelis y series, mi serie favorita es Entrevías, y mis peliculas favoritas son las de Harry Potter, mi actor favorito es Luis Zahera.
+            </p>
+
+            <!-- Galería Fila 1: Espaldas y Segovia -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-72">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2VaspXOBytv2XrsVV1YzPMNBH8MdvbSFuf2Obo1HGOZ4lotqnA1JgjMcpMzUPl0Gnb-MYCe40YdEGdDG4btQn2ygnFkLh0LnK3Vac3qScZpvwLzxn4I6b9rKMQLtw5cDRvLeZlysjPIFvnyXYLqVntrYW7tDpb6e0u9DhQmrynX8rjl0YOZdvS5DUbOU/s320-rw/Espaldas.jpg" alt="Espaldas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-72">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirT5adyFf-h4iTkTFXtcBpl92YPC8EzQeMk7bVSE-KuaeVZ5U2YqGdu7t6SsjPG3GSaqgTs-QWg2omSnkKaIbLSRXlCrS-TElhKXUz5INxJRsOmkB8b9UvAc3-OrwIxKFIRfY7izf4v58sv0FQGyCL7Ot_23XWF7lz3ggntKym9sYr6l0dFLMoAqNfMcU/s320-rw/Segovia.jpg" alt="Segovia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+
+            <!-- Galería Fila 2: Arka_Mario, Romi_Mario, Arka_Romi -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-64">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglOMi4DSE_xnI5kaLFTR51tZF1vHGF6ibV90rF3HoG-yn0VHd07Rhe4REwNltGvyIBIZeUTua2NXzbZHss_fv9j40hr_hdFyGeXkPAuPqw5E3Ed1XnEZSQyXHE4sGJC1fa1uPA2pbgv00NeP-YbCZP5kVlsbWweuJDbV1c9mV8mnedgNj4UHU4a6077xI/s320-rw/Arka_Mario.jpg" alt="Arka y Mario" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-64">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnCa12uRIsgl62XoGVaWgNfrpEbfRAWAUQBTmLXwiswtZicCi20REirf5j2s_QuEI_Wd0mUna19msSIhi90oeAiQQAVfbIbn-y2AyaPqpmEAt2ojnrNP7rU2I-6zxWDLpDWZ9zZLALMqGy2-b3D2Xf43MwypLK1P3DI8bw2FZNbizVkAwbrP5FHVzKnmw/s320-rw/Romi_Mario.jpg" alt="Romi y Mario" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-64">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ9dz2KnCKWSmrN-O_75UGZSXJq_Qn8TaNRz21bgxAL5qujENZcjdrmUAC1iFIw-vEpCq9ar45aj68YD5dQZmJYzUJD6Y9oC1I5bjXOEjzDVRzCOie7BxSkSEZi-5gDUTICHABYaEeypRlmEhslnk3N_OQvhUu_iNxIGztrCqw69zyk7ReDGsL_0-j6F8/s320-rw/Arka_Romi.jpg" alt="Arka y Romi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+
+            <!-- Galería Fila 3: UDL y UDL_Iker -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-72">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKazlb4lSynKavZP76rB5MAZasnEahziZuzzBwzxz5-cU2oXF4RWzy7XVXghdxw_0lgZ13hDl5LbpFix1-cSPNXsNFvnF8algxe4rjRjwrmXfIPJDyEOQrmo6hminVMSpXGIW8Ger5vbLDrxnsB5xE5zwuQpP9TnkBDGi4Wx2O6bPzDZJOck2Ttl_UQMU/s320-rw/UDL.jpg" alt="UD Logroñés" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-72">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3koXC-7vULEc7knzawv8ViOSSxGINHwn05tynzuZQsvg8pkWy8URERc81t93Ws0QXgUJSAa2HtKYEsJ-kX5JdG0QRrVNaJ_I0msnpD1W9Z-UBTfDNlpBAS1UkzZ5mBejjKeki5_CmBj9aYBKrniA7Q_fsBKakL608RUA8ZhsgA8sXRlz9DLdxQGeGRMc/s320-rw/UDL_Iker.jpg" alt="UDL con Iker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+
+            <!-- Galería Fila 4: Santiago Bernabéu -->
+            <div class="grid grid-cols-1 max-w-md mx-auto gap-6 mb-6">
+                <div class="rounded-2xl overflow-hidden border border-orange-500/30 bg-cardBg shadow-xl group h-72">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiI_ZEUXe_e880gLow4Wb6ktEQNO2TK5vl7eBEqULpUJv5P92lQTfdj0WkFHjZ2qnNMu6sw2r_BWSFNLGDPIFsIPFgKSIvFEwAmWkkEK_jIlv8rcqwnVjYlcSCpjtAyg8CqwLbRteQwptgTW2r1kt5Vzc4f_y-AwJYvmPSVD1k747vgz0KKF2nUSvW3yg/s320-rw/RM_Bernabeu.jpg" alt="Santiago Bernabéu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+
+            <!-- Galería Fila 5: Luis Zahera (Ajustado con object-contain y bordes con glow naranja) -->
+            <div class="flex justify-center mb-6">
+                <div class="inline-block rounded-2xl overflow-hidden border-2 border-orange-500/60 bg-cardBg shadow-2xl glow-orange p-1.5 transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC5WaFsu3uWod3kVRllHx7XPFxv3t2_c4HE688cZTIRUc5Na0ugM3TL4v1wt_Gr5_zUEEwCJ5CY7qvYtvIPxKiT0r1J30fGkHE0_Wc4JhaTageg_vGAGDMRlhcTeWvgVAbv8f5gnlp3c6efdbGH2MMzdAN3IJuI7aQyyb6XUFvyG8xt9vi64M01j5P1uk/s320-rw/Luis_Zahera.jpg" alt="Luis Zahera" class="block max-h-[480px] w-auto h-auto rounded-xl object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEME SECTION ("Absolute Fidema") -->
+    <section id="meme" class="py-16 bg-darkBg border-y border-white/5">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <span class="text-[#00e5b7] text-xs font-bold tracking-widest uppercase block mb-2">Meme Oficial de la Comunidad</span>
+            <h2 class="text-3xl font-black text-white mb-8">ABSOLUTE FIDEMA</h2>
+            
+            <div class="max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-orange-500/60 glow-orange bg-cardBg p-2 shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhx30Vd-p4HgiIMn9wgiJ7FsmwITn_ZeEkA8vuNCZ_cdDWHrE3VCFCF1IF-0CBd-k6Jum7X8r21z2jB07nNWXvN2ZAw35KU18oqZNkO6M5DuazEI5Xeq7h04rqCH1-QS5UKSda2VveBq8m88sKfbWQE9WoadGDKr2tg-znMIAttdBkPGpqEEiqQqoW_2i4/s1080/Absolute_Fidema.jpg" alt="Absolute Fidema Meme" class="w-full h-auto rounded-2xl object-cover" onerror="this.src='https://placehold.co/600x600/16181f/ff6b00?text=ABSOLUTE+FIDEMA'">
+            </div>
+        </div>
+    </section>
+
+    <!-- REDES SOCIALES -->
+    <section id="redes" class="py-16 bg-cardBg/50 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">REDES SOCIALES</h2>
+                <p class="text-gray-400 text-sm mt-1">Sígueme en todas mis plataformas</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://www.youtube.com/@Fideo5M" target="_blank" class="social-btn yt p-5 rounded-2xl border border-[#ff6b00]/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center space-x-3 font-bold shadow-lg">
+                    <i class="fa-brands fa-youtube text-2xl"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://www.instagram.com/fideo_5m/" target="_blank" class="social-btn ig p-5 rounded-2xl border border-[#ff6b00]/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center space-x-3 font-bold shadow-lg">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://twitch.tv/fideo_yt" target="_blank" class="social-btn tw p-5 rounded-2xl border border-[#ff6b00]/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center space-x-3 font-bold shadow-lg">
+                    <i class="fa-brands fa-twitch text-2xl"></i>
+                    <span>Twitch</span>
+                </a>
+                <a href="https://www.tiktok.com/@fideo_yt?lang=es" target="_blank" class="social-btn tk p-5 rounded-2xl border border-[#ff6b00]/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center space-x-3 font-bold shadow-lg">
+                    <i class="fa-brands fa-tiktok text-2xl"></i>
+                    <span>TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VÍDEOS & SHORTS -->
+    <section id="videos" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-[#ffa800] text-xs font-bold tracking-widest uppercase">Vídeos Destacados</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-1">VÍDEOS & SHORTS</h2>
+            </div>
+
+            <!-- Main Video -->
+            <div class="mb-14">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center space-x-2">
+                    <i class="fa-solid fa-play-circle text-[#ff6b00]"></i>
+                    <span>Último Vídeo Subido</span>
+                </h3>
+
+                <a href="https://youtu.be/xYZC3LDjgtY" target="_blank" class="group block relative rounded-3xl overflow-hidden bg-cardBg border border-[#ff6b00]/30 glow-orange hover:border-[#ff6b00] transition-all">
+                    <div class="relative w-full aspect-video bg-cover bg-center" style="background-image: url('https://img.youtube.com/vi/xYZC3LDjgtY/maxresdefault.jpg');">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-20 h-20 rounded-full bg-[#FF0000] text-white flex items-center justify-center text-3xl shadow-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <h4 class="text-xl font-extrabold text-white group-hover:text-[#ffa800] transition-colors">MI AMIGO ME ENSEÑA A JUGAR A PHASMOPHOBIA!!!</h4>
+                            <p class="text-xs text-gray-400 mt-1">Fideo5M ft. By Marius</p>
+                        </div>
+                        <span class="px-5 py-2.5 rounded-xl bg-[#FF0000] text-white font-bold text-xs flex items-center space-x-2 shrink-0">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>Ver en YouTube</span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Shorts Grid -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center space-x-2">
+                    <i class="fa-solid fa-bolt text-[#ffa800]"></i>
+                    <span>Últimos Shorts</span>
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <a href="https://www.youtube.com/watch?v=V-tdbEO6mto" target="_blank" class="group block rounded-2xl overflow-hidden bg-cardBg border border-white/10 hover:border-[#ff6b00]/60 transition-all hover:-translate-y-1 shadow-xl">
+                        <div class="relative w-full aspect-[9/16] bg-cover bg-center" style="background-image: url('https://img.youtube.com/vi/V-tdbEO6mto/hqdefault.jpg');">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-[#FF0000] text-white flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-play ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-white text-sm group-hover:text-[#ffa800] transition-colors">QUE SUSTO!!! 😱</h4>
+                            <span class="text-xs text-[#00e5b7] font-semibold mt-1 block">#Shorts</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=yliSdx8KMPo" target="_blank" class="group block rounded-2xl overflow-hidden bg-cardBg border border-white/10 hover:border-[#ff6b00]/60 transition-all hover:-translate-y-1 shadow-xl">
+                        <div class="relative w-full aspect-[9/16] bg-cover bg-center" style="background-image: url('https://img.youtube.com/vi/yliSdx8KMPo/hqdefault.jpg');">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-[#FF0000] text-white flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-play ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-white text-sm group-hover:text-[#ffa800] transition-colors">Asusto a mi amigo 😂</h4>
+                            <span class="text-xs text-[#00e5b7] font-semibold mt-1 block">#Shorts</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=3WHDO1MloLk" target="_blank" class="group block rounded-2xl overflow-hidden bg-cardBg border border-white/10 hover:border-[#ff6b00]/60 transition-all hover:-translate-y-1 shadow-xl">
+                        <div class="relative w-full aspect-[9/16] bg-cover bg-center" style="background-image: url('https://img.youtube.com/vi/3WHDO1MloLk/hqdefault.jpg');">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 rounded-full bg-[#FF0000] text-white flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-play ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-white text-sm group-hover:text-[#ffa800] transition-colors">Nos asusta una vieja en el phasmo 👻</h4>
+                            <span class="text-xs text-[#00e5b7] font-semibold mt-1 block">#Shorts</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO & AGRADECIMIENTOS -->
+    <section id="contacto" class="py-20 bg-cardBg/30 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-white">CONTACTO / COLABORACIONES</h2>
+                <p class="text-gray-400 text-sm mt-2">Contáctame por Instagram o mándame un correo a <span class="text-[#00e5b7] font-semibold">5mfideoman@gmail.com</span></p>
+            </div>
+
+            <form id="contact-form" class="bg-cardBg border border-[#ff6b00]/30 rounded-3xl p-6 sm:p-8 space-y-6 glow-orange mb-16">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Nombre</label>
+                        <input type="text" required placeholder="Tu nombre" class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#00e5b7] transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Email</label>
+                        <input type="email" required placeholder="tu@email.com" class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#00e5b7] transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Mensaje</label>
+                    <textarea rows="4" required placeholder="Escribe tu mensaje..." class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#00e5b7] transition-colors"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-[#00e5b7] text-black font-extrabold text-base glow-teal transition-all transform hover:-translate-y-0.5">
+                    Enviar Mensaje
+                </button>
+            </form>
+
+            <!-- Agradecimientos Section -->
+            <div class="bg-cardBg/60 border border-white/10 rounded-3xl p-6 sm:p-8 text-center space-y-6 mb-12">
+                <h3 class="text-xl font-black text-white tracking-wide uppercase text-[#ffa800]">Agradecimientos</h3>
+                
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1">Editor:</span>
+                        <a href="https://www.instagram.com/chorii.sntm?exln=b2d4a2w4emVydjRo" target="_blank" class="text-white font-semibold hover:text-[#00e5b7] transition-colors inline-flex items-center space-x-1.5">
+                            <i class="fa-brands fa-instagram text-[#E1306C]"></i>
+                            <span>Chori</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-2">Colaboradores:</span>
+                        <div class="flex flex-wrap justify-center gap-4 text-gray-300 font-medium">
+                            <a href="https://www.twitch.tv/bymariius72" target="_blank" class="hover:text-[#00e5b7] transition-colors inline-flex items-center space-x-1.5">
+                                <i class="fa-brands fa-twitch text-[#9146FF]"></i>
+                                <span>ByMariius72</span>
+                            </a>
+                            <span class="text-gray-600">•</span>
+                            <a href="https://www.youtube.com/@Romipvp07" target="_blank" class="hover:text-[#00e5b7] transition-colors inline-flex items-center space-x-1.5">
+                                <i class="fa-brands fa-youtube text-[#FF0000]"></i>
+                                <span>Romipvp07</span>
+                            </a>
+                            <span class="text-gray-600">•</span>
+                            <a href="https://www.instagram.com/goguito_dsv?dlrf=MXM2NHQ2aXdxaDI1dA%3D%3D" target="_blank" class="hover:text-[#00e5b7] transition-colors inline-flex items-center space-x-1.5">
+                                <i class="fa-brands fa-instagram text-[#E1306C]"></i>
+                                <span>GoGuitoYT</span>
+                            </a>
+                            <span class="text-gray-600">•</span>
+                            <a href="https://www.twitch.tv/arkaitzmz" target="_blank" class="hover:text-[#00e5b7] transition-colors inline-flex items-center space-x-1.5">
+                                <i class="fa-brands fa-twitch text-[#9146FF]"></i>
+                                <span>ArkaitzMZ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graffiti Section -->
+            <div class="max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-orange-500/50 glow-orange bg-cardBg p-2 shadow-2xl">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKtmuw5XbrnvNcxQUsomhjrax1qG9VVNli2BRu1961vkqdzYnrrCUxr3OlLL0n9jgiVuyZb6wkNbAzuCVqkIAOEDssoZ0KKLR0qV0s_vQYXBbB02kvMRX7l7f-PCu7DpdsjblLUexS0EGD8PBGkpWbYjYEHmodRL4fTswJhfbtAV4iWTCoBd1xy7S2nUk/s320-rw/Grafity.jpg" alt="Fideo5M Graffiti" class="w-full h-auto rounded-2xl object-cover" onerror="this.src='https://placehold.co/600x400/16181f/ff6b00?text=FIDEO5M+GRAFFITI'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10 text-center text-xs text-gray-500">
+        <p>© 2026 Fideo5M - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Form Submit Handler -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            this.reset();
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
